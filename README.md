@@ -1,6 +1,6 @@
 # bitbay-api-node
 
-[![Build Status](https://travis-ci.org/BitBayAPI/bitbay-api-node.svg?branch=master)](https://travis-ci.org/BitBayAPI/bitbay-api-node)
+[![Build Status](https://travis-ci.org/BitBayAPI/bitbay-api-node.svg?branch=master)](https://travis-ci.org/BitBayAPI/bitbay-api-node) [![Greenkeeper badge](https://badges.greenkeeper.io/bitbayapi/bitbay-api-node.svg)](https://greenkeeper.io/)
 
 See full description at https://docs.bitbay.net/v3.2.0/reference
 
