@@ -1,5 +1,6 @@
 # bitbay-api-node
 
+[![Build Status](https://travis-ci.org/BitBayAPI/bitbay-api-node.svg?branch=master)](https://travis-ci.org/BitBayAPI/bitbay-api-node)
 See full description at https://docs.bitbay.net/v3.2.0/reference
 
 ## Installation
