@@ -1,6 +1,6 @@
 {
   "name": "bitbay-api-node",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "BitBay module for connecting to REST API.",
   "engines": {
     "node": ">=7"
