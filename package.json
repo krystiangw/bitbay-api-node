@@ -1,0 +1,23 @@
+{
+  "name": "bitbay-api-node",
+  "version": "1.0.0",
+  "description": "BitBay module for connecting to REST API.",
+  "engines": {
+    "node": ">=7"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BitBayAPI/bitbay-api-node.git"
+  },
+  "author": "BitBay",
+  "license": "MIT",
+  "homepage": "https://docs.bitbay.net/v3.2.0/reference",
+  "dependencies": {
+    "request": "^2.87.0",
+    "uuid": "^3.3.2"
+  }
+}
