@@ -73,3 +73,21 @@ api.getCryptoAddress('455b3f25-8d3a-409f-9fe6-8cc40f1ce533');
 // Generate new cryptocurrency address on specified wallet
 api.getNewAddress('455b3f25-8d3a-409f-9fe6-8cc40f1ce533', { currency: 'PLN' } );
 
+// Get all historical addresses from specified wallet
+api.getHistoricalAddresses('455b3f25-8d3a-409f-9fe6-8cc40f1ce533');
+
+// Let's send some Bitcoins
+api.withdrawCrypto('455b3f25-8d3a-409f-9fe6-8cc40f1ce533', { address: '3Qck3sNnAe5YVLe9WDzMp3aK2cgsU7F5Wv', amount: 0.5, comment: 'test' } );
+
+// Get address to deposit USD
+api.getFiatAddress('USD');
+
+// Time for withdraw our USD
+api.withdrawFiat('455b3f25-8d3a-409f-9fe6-8cc40f1ce655', 'USD', { bank_account_number: 'PL82154012872216000073790002', address: 'Ul. Puławska 111A/109, 02-707 Warszawa', name: 'Igoria Trade S.A.', title: 'VVVe94d7e43536fVVV', swift: 'EBOSPLPWXXX' } );
+
+// Get transactions history for buy transactions from BTC-PLN where rate is from 23000 to 25000
+api.getTransactionsHistory( { markets: ['BTC-PLN'], rateFrom:23000, rateTo: 25000, userAction: 'buy', nextPageCursor: 'start' } );
+
+// Get 20 last historical operations on XMR wallets and sort descending by time
+api.getOperationsHistory( { "balanceCurrencies":["XMR"], "limit":"20", "sort":[{"order":"DESC","by":"time"}], "nextPageCursor":"start"});
+
