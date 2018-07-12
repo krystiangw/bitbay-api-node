@@ -9,6 +9,13 @@
   "scripts": {
     "test": "echo \"OK\" && exit 0"
   },
+  "keywords": [
+    "bitbay",
+    "cryptocurency",
+    "exchange",
+    "node",
+    "api"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/BitBayAPI/bitbay-api-node.git"
