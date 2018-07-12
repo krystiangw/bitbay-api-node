@@ -12,25 +12,25 @@ See full description at https://docs.bitbay.net/v3.2.0/reference
 
 The BBA constructor receive public and private key using to authentication. 
 ```js
-const BBA = require('bitbay-api-node')
+const BBA = require('bitbay-api-node');
 
-var api = new BBA('22345f6f-1b1d-1234-a973-a10b1bdba1a1', '78539fe0-e9b0-4e4e-8c86-70b36aa93d4f');
+const api = new BBA('22345f6f-1b1d-1234-a973-a10b1bdba1a1', '78539fe0-e9b0-4e4e-8c86-70b36aa93d4f');
 ```
 
 You can also execute constructor without parameters and feel free to get public endpoints. 
 ```js
-const BBA = require('bitbay-api-node')
+const BBA = require('bitbay-api-node');
 
-var api = new BBA();
+const api = new BBA();
 api.ticker();
 ```
 
 ## Public endpoints
 
 ```js
-const BBA = require('bitbay-api-node')
+const BBA = require('bitbay-api-node');
 
-var api = new BBA();
+const api = new BBA();
 
 // Get ticker from BTC-EUR market
 api.ticker('BTC-EUR');
@@ -42,5 +42,34 @@ api.orderbook('LSK-PLN');
 api.transactions('BTC-USD', { limit: 10, fromTime: 1531407461 } );
 
 // Get 30 minutes candles from last 4 hours
-api.candles(1800, { fromTime: 1544158620, toTime: 1544173061 } );
+api.candles('BTC-PLN', 1800, { fromTime: 1544158620, toTime: 1544173061 } );
 ```
+
+## Private endpoints
+
+```js
+const BBA = require('bitbay-api-node');
+
+const api = new BBA('22345f6f-1b1d-1234-a973-a10b1bdba1a1', '78539fe0-e9b0-4e4e-8c86-70b36aa93d4f');
+
+// We want to buy 1 Bitcoin for 4000$ on BTC-USD market and offer will be hidden
+api.newOffer('BTC-USD', { amount: 1, rate: 1, offerType: 'buy', mode: 'limit', hidden: true } );
+
+// Let's get active offers from every market
+api.getOffers();
+
+// Remove an offer
+api.cancelOffer('BTC-USD', '82ca35da-6eeb-4f30-91bb-165fdcf4d8b2', 'buy', 4000);
+
+// Get our trading fees on BTC-PLN market (default)
+api.getConfig();
+
+// Change default wallets to trade on BTC-USD
+api.changeConfig('BTC-USD', { first: '455b3f25-8d3a-409f-9fe6-8cc40f1ce533', second: '455b3f25-8d3a-509f-9fe6-8cc40f1ce542' } );
+
+// Get our address to deposit cryptocurrency on specified wallet
+api.getCryptoAddress('455b3f25-8d3a-409f-9fe6-8cc40f1ce533');
+
+// Generate new cryptocurrency address on specified wallet
+api.getNewAddress('455b3f25-8d3a-409f-9fe6-8cc40f1ce533', { currency: 'PLN' } );
+
