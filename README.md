@@ -46,6 +46,7 @@ api.candles('BTC-PLN', 1800, { fromTime: 1544158620, toTime: 1544173061 } );
 ```
 
 ## Private endpoints
+### Trading
 
 ```js
 const BBA = require('bitbay-api-node');
@@ -66,7 +67,10 @@ api.getConfig();
 
 // Change default wallets to trade on BTC-USD
 api.changeConfig('BTC-USD', { first: '455b3f25-8d3a-409f-9fe6-8cc40f1ce533', second: '455b3f25-8d3a-509f-9fe6-8cc40f1ce542' } );
+```
 
+### Deposit and withdrawal
+```js
 // Get our address to deposit cryptocurrency on specified wallet
 api.getCryptoAddress('455b3f25-8d3a-409f-9fe6-8cc40f1ce533');
 
@@ -84,13 +88,18 @@ api.getFiatAddress('USD');
 
 // Time for withdraw our USD
 api.withdrawFiat('455b3f25-8d3a-409f-9fe6-8cc40f1ce655', 'USD', { bank_account_number: 'PL82154012872216000073790002', address: 'Ul. Puławska 111A/109, 02-707 Warszawa', name: 'Igoria Trade S.A.', title: 'VVVe94d7e43536fVVV', swift: 'EBOSPLPWXXX' } );
-
+```
+### History
+```js
 // Get transactions history for buy transactions from BTC-PLN where rate is from 23000 to 25000
 api.getTransactionsHistory( { markets: ['BTC-PLN'], rateFrom:23000, rateTo: 25000, userAction: 'buy', nextPageCursor: 'start' } );
 
 // Get 20 last historical operations on XMR wallets and sort descending by time
 api.getOperationsHistory( { "balanceCurrencies":["XMR"], "limit":"20", "sort":[{"order":"DESC","by":"time"}], "nextPageCursor":"start"});
+```
 
+### Manage wallets
+```js
 // Get list of all wallets
 api.getWallets();
 
@@ -102,5 +111,4 @@ api.changeWalletName('455b3f25-8d3a-409f-9fe6-8cc40f1ce533', { name: 'arbitratio
 
 // Send some cryptocurrency over our wallets
 api.internalTransfer('455b3f25-8d3a-409f-9fe6-8cc40f1ce533', '455b3f25-8d3a-409f-9fe6-8cc40f1ce534', { currency: 'BTC', funds: 0.4 } );
-
 ```
