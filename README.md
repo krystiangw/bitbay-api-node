@@ -91,3 +91,16 @@ api.getTransactionsHistory( { markets: ['BTC-PLN'], rateFrom:23000, rateTo: 2500
 // Get 20 last historical operations on XMR wallets and sort descending by time
 api.getOperationsHistory( { "balanceCurrencies":["XMR"], "limit":"20", "sort":[{"order":"DESC","by":"time"}], "nextPageCursor":"start"});
 
+// Get list of all wallets
+api.getWallets();
+
+// Create a new wallet for Bitcoin
+api.newWallet( { currency: 'BTC', type: 'crypto', name: 'trading' } );
+
+// I think that was a bad name, let's change it
+api.changeWalletName('455b3f25-8d3a-409f-9fe6-8cc40f1ce533', { name: 'arbitration' } );
+
+// Send some cryptocurrency over our wallets
+api.internalTransfer('455b3f25-8d3a-409f-9fe6-8cc40f1ce533', '455b3f25-8d3a-409f-9fe6-8cc40f1ce534', { currency: 'BTC', funds: 0.4 } );
+
+```
