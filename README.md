@@ -1,4 +1,4 @@
-# bitbay-api-node
+# BitBay API REST for Node.js
 
 [![Build Status](https://travis-ci.org/BitBayAPI/bitbay-api-node.svg?branch=master)](https://travis-ci.org/BitBayAPI/bitbay-api-node) [![Greenkeeper badge](https://badges.greenkeeper.io/bitbayapi/bitbay-api-node.svg)](https://greenkeeper.io/)
 
