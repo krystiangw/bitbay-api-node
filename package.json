@@ -1,6 +1,6 @@
 {
   "name": "bitbay-api-node",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "BitBay module for connecting to REST API.",
   "engines": {
     "node": ">=7"
@@ -28,7 +28,9 @@
     "uuid": "^3.3.2"
   },
   "devDependencies": {
-  "blue-tape": "^1.0.0",
-  "tape": "^4.6.3"
+    "blue-tape": "^1.0.0",
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0",
+    "tape": "^4.6.3"
   }
 }

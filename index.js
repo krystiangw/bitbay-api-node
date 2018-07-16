@@ -16,3 +16,5 @@ api.ticker('BTC-EUR');
 
 // Get 30 minutes candles from last 4 hours
 //api.candles('BTC-PLN', 1800, { fromTime: 1544158620, toTime: 1544173061 } );
+
+module.exports = BBA;
